@@ -5,15 +5,17 @@ import javax.persistence.*;
 @Entity
 @Table(name = "connection")
 public class Connection {
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
     @JoinColumn
+    @ManyToOne
     private User user;
 
-    @ManyToOne
     @JoinColumn
+    @ManyToOne
     private ServiceProvider serviceProvider;
 
     public Connection() {

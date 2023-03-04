@@ -7,6 +7,7 @@ import java.util.List;
 @Entity
 @Table(name = "admin")
 public class Admin {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -15,7 +16,7 @@ public class Admin {
 
     private String password;
 
-    @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
     private List<ServiceProvider> serviceProviders = new ArrayList<>();
 
     public Admin(String username, String password) {
